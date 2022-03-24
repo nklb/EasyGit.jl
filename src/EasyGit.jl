@@ -4,7 +4,6 @@ using Dates
 
 export gitstaginginfo, gitisclean, githead, gitshorthead, githeadtime
 
-end
 
 function gitverify(repfolder::String=".")
     try
@@ -56,7 +55,7 @@ end
 
 """
     githead(repfolder::String=".")
-Get hash of the current repository head.
+Get hash of the repository head.
 """
 function githead(repfolder::String=".")
     gitverify(repfolder)
@@ -66,7 +65,7 @@ end
 
 """
     githead(repfolder::String=".")
-Get short hash of the current repository head.
+Get short hash of the repository head.
 """
 function gitshorthead(repfolder::String=".")
     hid = githead(repfolder)
@@ -82,4 +81,6 @@ function githeadtime(repfolder::String=".")
     gitverify(repfolder)
     htime_unix = readchomp(`git show -s --format=%ct HEAD`)
     unix2datetime(parse(Int64, htime_unix))
+end
+
 end
