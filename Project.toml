@@ -1,7 +1,7 @@
 name = "EasyGit"
 uuid = "df93fb25-37d5-4cc8-8d8c-5dd79facbe9a"
 authors = ["Niklas Kolbe <nklb@mailbox.org>"]
-version = "0.1.0"
+version = "0.1.1"
 
 [deps]
 Dates = "ade2ca70-3891-5945-98fb-dc099432e06a"

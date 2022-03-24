@@ -49,7 +49,7 @@ yet committed (or ignored).
 """
 function gitisclean(repfolder::String=".")
     modified, untracked = gitstaginginfo(repfolder)
-    isempty(modified) & isempty(untracked)
+    isempty(modified) && isempty(untracked)
 end
 
 
