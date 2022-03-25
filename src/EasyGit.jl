@@ -83,4 +83,14 @@ function githeadtime(repfolder::String=".")
     unix2datetime(parse(Int64, htime_unix))
 end
 
+
+"""
+    gitroot(repfolder::String=".")
+Get root folder of the repository.
+"""
+function gitroot(repfolder::String=".")
+    gitverify(repfolder)
+    readchomp(`git rev-parse --show-toplevel`)
+end
+
 end
