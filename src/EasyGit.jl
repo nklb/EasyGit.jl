@@ -2,7 +2,8 @@ module EasyGit
 
 using Dates
 
-export gitstaginginfo, gitisclean, githead, gitshorthead, githeadtime
+export gitstaginginfo, gitisclean, githead, gitshorthead,
+    githeadtime, gitroot
 
 
 function gitverify(repfolder::String=".")
