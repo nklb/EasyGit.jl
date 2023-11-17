@@ -8,7 +8,11 @@ export gitstaginginfo, gitisclean, githead, gitshorthead,
 
 function gitverify(repfolder::String=".")
     try
-        read(`command -v git`)
+        if Sys.iswindows()
+            read(`where git`)
+        else
+            read(`which git`)
+        end
     catch 
         error("git is not installed.")
     end
@@ -69,8 +73,7 @@ end
 Get short hash of the repository head.
 """
 function gitshorthead(repfolder::String=".")
-    hid = githead(repfolder)
-    hid[1:7]
+    githead(repfolder)[1:7]
 end
 
 
